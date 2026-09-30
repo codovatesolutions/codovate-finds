@@ -137,7 +137,7 @@ export default function AdminPage() {
           </form>
 
           <p className="text-[11px] text-slate-400 text-center">
-            Default local dev password: <code className="text-blue-300">codovate2026</code>
+            Set <code className="text-blue-300 font-mono">ADMIN_PASSWORD</code> in your Vercel or environment settings.
           </p>
         </div>
       </div>

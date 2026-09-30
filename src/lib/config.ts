@@ -9,9 +9,9 @@ export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || "codovatesolutions@gmail.com";
 
 export const PINTEREST_VERIFICATION =
-  process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION || "54c480283a5c152afb85422bbf117785";
+  process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION || "";
 
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-HXVDZD6T6D";
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export function getFullUrl(path: string): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;

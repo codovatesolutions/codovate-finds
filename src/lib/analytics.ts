@@ -29,15 +29,14 @@ export const trackEvent = (
 };
 
 export const trackAffiliateClick = (
-  productName: string,
-  affiliateUrl: string,
-  category?: string
+  productId: string,
+  category?: string,
+  guideSlug?: string
 ) => {
   trackEvent("affiliate_click", {
-    product_name: productName,
-    affiliate_url: affiliateUrl,
+    product_id: productId,
     category: category || "general",
-    timestamp: new Date().toISOString(),
+    guide_slug: guideSlug || "direct",
   });
 };
 

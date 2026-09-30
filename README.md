@@ -114,17 +114,16 @@ npm run start
 Product recommendations are stored centrally in `src/lib/data/products.ts`:
 ```typescript
 {
-  id: "prod-laptop-stand-01",
-  name: "Featured Adjustable Ergonomic Laptop Stand",
-  slug: "featured-adjustable-laptop-stand",
+  id: "prod-example",
+  name: "Example Product",
+  slug: "example-product",
   category: "laptop-accessories",
-  affiliateUrl: "https://link.amazon/B0iN6y6os",
-  bestFor: "Students with compact study desks",
-  summary: "A sturdy ventilated aluminum laptop stand...",
-  pros: ["Height adjustable", "Ventilated", "Portable"],
-  cons: ["Requires external keyboard"],
-  verified: true,
-  badge: "Top Pick"
+  affiliateUrl: "YOUR_AMAZON_ASSOCIATE_LINK",
+  bestFor: "Describe only after verification",
+  summary: "Add verified product information here.",
+  pros: [],
+  cons: [],
+  verified: false
 }
 ```
 

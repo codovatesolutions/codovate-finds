@@ -4,6 +4,7 @@ import { CATEGORIES } from "@/lib/data/categories";
 import { getFullUrl } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Public indexable static pages (Internal noindex tools like /tools/* & /admin are excluded)
   const staticPages = [
     "",
     "/guides",
@@ -12,8 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/affiliate-disclosure",
     "/privacy",
     "/terms",
-    "/tools/pin-studio",
-    "/tools/utm-builder",
   ].map((route) => ({
     url: getFullUrl(route),
     lastModified: new Date().toISOString(),

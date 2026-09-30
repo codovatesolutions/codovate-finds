@@ -251,7 +251,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
 
         {/* Quick Comparison Table if products exist */}
         {guide.products && guide.products.length > 0 && (
-          <ComparisonTable products={guide.products} categorySlug={guide.category} />
+          <ComparisonTable products={guide.products} categorySlug={guide.category} guideSlug={guide.slug} />
         )}
 
         {/* Detailed Product Cards Section */}
@@ -266,6 +266,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
                   key={product.id}
                   product={product}
                   categorySlug={guide.category}
+                  guideSlug={guide.slug}
                 />
               ))}
             </div>

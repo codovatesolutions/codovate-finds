@@ -8,9 +8,10 @@ import { trackAffiliateClick } from "@/lib/analytics";
 interface ComparisonTableProps {
   products: Product[];
   categorySlug?: string;
+  guideSlug?: string;
 }
 
-export default function ComparisonTable({ products, categorySlug }: ComparisonTableProps) {
+export default function ComparisonTable({ products, categorySlug, guideSlug }: ComparisonTableProps) {
   if (!products || products.length === 0) return null;
 
   return (
@@ -53,14 +54,14 @@ export default function ComparisonTable({ products, categorySlug }: ComparisonTa
                     {prod.bestFor || "General Student Use"}
                   </td>
                   <td className="py-4 px-4 text-xs text-slate-400">
-                    {prod.pros && prod.pros.length > 0 ? prod.pros[0] : "Durable Build"}
+                    {prod.pros && prod.pros.length > 0 ? prod.pros[0] : "Check Amazon for details"}
                   </td>
                   <td className="py-4 px-4 text-right">
                     <a
                       href={url}
                       target="_blank"
                       rel={AFFILIATE_REL}
-                      onClick={() => trackAffiliateClick(prod.name, url, categorySlug || prod.category)}
+                      onClick={() => trackAffiliateClick(prod.id, categorySlug || prod.category, guideSlug)}
                       className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all whitespace-nowrap"
                     >
                       <span>Check Price</span>

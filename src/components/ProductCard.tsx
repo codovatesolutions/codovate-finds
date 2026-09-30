@@ -8,13 +8,14 @@ import { trackAffiliateClick } from "@/lib/analytics";
 interface ProductCardProps {
   product: Product;
   categorySlug?: string;
+  guideSlug?: string;
 }
 
-export default function ProductCard({ product, categorySlug }: ProductCardProps) {
+export default function ProductCard({ product, categorySlug, guideSlug }: ProductCardProps) {
   const affiliateUrl = formatAffiliateUrl(product.affiliateUrl);
 
   const handleClick = () => {
-    trackAffiliateClick(product.name, affiliateUrl, categorySlug || product.category);
+    trackAffiliateClick(product.id, categorySlug || product.category, guideSlug);
   };
 
   return (
