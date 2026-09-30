@@ -43,9 +43,13 @@ cp .env.example .env.local
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Public contact email | `codovatesolutions@gmail.com` |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | `G-HXVDZD6T6D` |
 | `NEXT_PUBLIC_PINTEREST_VERIFICATION` | Pinterest domain claim meta tag code | `54c480283a5c152afb85422bbf117785` |
-| `ADMIN_PASSWORD` | Password for protected `/admin` portal | `CHANGE_ME_IN_VERCEL` |
+| `ADMIN_PASSWORD` | **Mandatory Secret**: Password for protected `/admin` portal | `CHANGE_ME_IN_VERCEL` |
+| `ADMIN_SESSION_SECRET` | **Mandatory Secret**: Long random string for signing HMAC auth tokens | `GENERATE_A_LONG_RANDOM_SECRET_IN_VERCEL` |
 | `NEXT_PUBLIC_SUPABASE_URL` | Optional Supabase URL | `https://xyz.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Optional Supabase Anon key | `eyJhb...` |
+
+> [!IMPORTANT]
+> Both `ADMIN_PASSWORD` and `ADMIN_SESSION_SECRET` are **mandatory production secrets**. If either variable is unconfigured in Vercel, the `/admin` portal will fail closed and disable login functionality. Generate a long, unique random string for `ADMIN_SESSION_SECRET` specifically for this deployment.
 
 ---
 
@@ -61,7 +65,7 @@ npm run start
 1. Push your repository to **GitHub**.
 2. Log into **Vercel** and click **"Add New Project"**.
 3. Import `codovate-finds`.
-4. Configure **Environment Variables** in Vercel settings (`NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`, etc.).
+4. Configure **Environment Variables** in Vercel settings (`NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET`, etc.).
 5. Click **Deploy**.
 
 ---

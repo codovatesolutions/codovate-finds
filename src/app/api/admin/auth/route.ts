@@ -1,16 +1,18 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 
-function getSessionSecret(): string {
-  return (
-    process.env.ADMIN_SESSION_SECRET ||
-    "fallback_cf_session_secret_key_change_in_vercel_2026"
-  );
+function getSessionSecret(): string | null {
+  const secret = process.env.ADMIN_SESSION_SECRET;
+  if (!secret || !secret.trim()) {
+    return null;
+  }
+  return secret;
 }
 
-function createSignedSessionToken(ttlMs: number = 12 * 60 * 60 * 1000): string {
-  const exp = Date.now() + ttlMs;
+function createSignedSessionToken(ttlMs: number = 12 * 60 * 60 * 1000): string | null {
   const secret = getSessionSecret();
+  if (!secret) return null;
+  const exp = Date.now() + ttlMs;
   const signature = crypto
     .createHmac("sha256", secret)
     .update(String(exp))
@@ -19,16 +21,16 @@ function createSignedSessionToken(ttlMs: number = 12 * 60 * 60 * 1000): string {
 }
 
 function verifySignedSessionToken(token: string | null): boolean {
-  if (!token || !token.includes(".")) return false;
+  const secret = getSessionSecret();
+  if (!secret || !token || !token.includes(".")) return false;
   const parts = token.split(".");
   if (parts.length !== 2) return false;
   const [expStr, signature] = parts;
   const exp = parseInt(expStr, 10);
   if (isNaN(exp) || Date.now() > exp) {
-    return false; // Expired session token
+    return false; // Expired session token or malformed payload
   }
 
-  const secret = getSessionSecret();
   const expectedSig = crypto
     .createHmac("sha256", secret)
     .update(expStr)
@@ -58,12 +60,14 @@ const failedAttemptsMap = new Map<string, { count: number; resetTime: number }>(
 export async function POST(request: Request) {
   try {
     const adminPassword = process.env.ADMIN_PASSWORD;
-    if (!adminPassword || !adminPassword.trim()) {
+    const sessionSecret = getSessionSecret();
+
+    if (!adminPassword || !adminPassword.trim() || !sessionSecret) {
       return NextResponse.json(
         {
           success: false,
           message:
-            "Admin authentication is disabled because ADMIN_PASSWORD environment variable is not configured.",
+            "Admin authentication is disabled because ADMIN_PASSWORD or ADMIN_SESSION_SECRET environment variable is not configured.",
         },
         { status: 503 }
       );
@@ -93,6 +97,14 @@ export async function POST(request: Request) {
     if (typeof password === "string" && verifyAdminPassword(password)) {
       failedAttemptsMap.delete(ip);
       const sessionToken = createSignedSessionToken();
+
+      if (!sessionToken) {
+        return NextResponse.json(
+          { success: false, message: "Server configuration error generating session" },
+          { status: 500 }
+        );
+      }
+
       const response = NextResponse.json({
         success: true,
         message: "Authenticated successfully",
@@ -134,7 +146,9 @@ export async function POST(request: Request) {
 export async function GET(request: Request) {
   try {
     const adminPassword = process.env.ADMIN_PASSWORD;
-    if (!adminPassword || !adminPassword.trim()) {
+    const sessionSecret = getSessionSecret();
+
+    if (!adminPassword || !adminPassword.trim() || !sessionSecret) {
       return NextResponse.json({ authenticated: false, configured: false });
     }
 
