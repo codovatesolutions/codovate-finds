@@ -13,8 +13,8 @@ export const PRODUCTS: Product[] = [
       "A practical laptop stand recommendation designed to elevate your screen toward eye level and improve desk space organization.",
     pros: [
       "Screen elevation options for study desk setups",
-      "Elevated structure aids airflow underneath laptop chassis",
-      "Portable design suitable for moving between home and campus",
+      "Useful for organizing a study desk",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
     cons: [
       "Pairing with an external keyboard and mouse is recommended for best wrist ergonomics",
@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Featured Pick",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
       "A wireless mouse recommendation for compact student study tables and laptop navigation.",
     pros: [
       "Wireless form factor reduces cord drag on small tables",
-      "Compact size convenient for college bags",
+      "Useful for navigating student laptops",
     ],
     cons: [
       "Check retailer listing for battery power details",
@@ -44,7 +44,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Budget Choice",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
       "A desk lamp recommendation designed to provide directional lighting for student reading and late-night work.",
     pros: [
       "Directional light position for desktop focus",
-      "Adjustable arm for positioning over books and notebooks",
+      "Check the Amazon listing for current adjustability and positioning features.",
     ],
     cons: [
       "Check retailer page for power source and cable details",
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Study Pick",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -79,16 +79,16 @@ export const PRODUCTS: Product[] = [
     summary:
       "A desktop organizer recommendation designed to group stationery accessories and keep the main writing area clear.",
     pros: [
-      "Multiple compartments for stationery items",
+      "Useful for organizing a study desk",
       "Helps clear central desk surface",
     ],
     cons: [
-      "Fixed compartment sizes",
+      "Check the Amazon listing for current design, compatibility and specifications.",
     ],
     verified: false,
     badge: "Organizer Choice",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -99,10 +99,10 @@ export const PRODUCTS: Product[] = [
     affiliateUrl: "https://www.amazon.in/dp/B08L7V89KL?tag=codovateaffil-21",
     bestFor: "Connecting laptops, study lamps, and chargers on study tables",
     summary:
-      "An extension board recommendation designed for study desks needing multiple AC power sockets.",
+      "An extension board recommendation designed for study desks needing power connectivity.",
     pros: [
-      "Multiple power outlets for study desk setup",
-      "Master power switch control",
+      "Useful for study desk setups requiring power connectivity",
+      "Check the Amazon listing for current socket and switch configuration.",
     ],
     cons: [
       "Check retailer product page for exact cord length and electrical specifications",
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Hostel Choice",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
       "A USB port expansion hub recommendation for connecting external accessories.",
     pros: [
       "Expands a single laptop USB port for multiple accessories",
-      "Lightweight form factor for backpack storage",
+      "Check the Amazon listing for current design, compatibility and specifications.",
     ],
     cons: [
       "Check retailer specifications for pass-through charging support",
@@ -132,7 +132,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Productivity Pick",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
   {
@@ -143,10 +143,10 @@ export const PRODUCTS: Product[] = [
     affiliateUrl: "https://www.amazon.in/dp/B07C683GQ4?tag=codovateaffil-21",
     bestFor: "Carrying laptops, notebooks, and accessories around campus",
     summary:
-      "A campus backpack recommendation featuring a padded laptop section and comfortable shoulder straps.",
+      "A campus backpack recommendation for student daily gear.",
     pros: [
-      "Padded laptop section",
-      "Multiple storage compartments for books and daily gear",
+      "Check the Amazon listing for laptop section padding and pocket details.",
+      "Check the Amazon listing for current storage layout and compartment details.",
     ],
     cons: [
       "Check retailer description for laptop size compatibility and fabric details",
@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
     verified: false,
     badge: "Campus Choice",
     keyFeatures: [
-      "Check the Amazon product page for current connectivity, compatibility and technical specifications.",
+      "Check the Amazon product page for current design, compatibility and specifications.",
     ],
   },
 ];
