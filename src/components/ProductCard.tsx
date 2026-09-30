@@ -39,11 +39,11 @@ export default function ProductCard({ product, categorySlug }: ProductCardProps)
         </h3>
         {product.verified ? (
           <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-medium mt-1">
-            <ShieldCheck className="w-3.5 h-3.5" /> Verified Editorial Recommendation
+            <ShieldCheck className="w-3.5 h-3.5" /> Featured Recommendation
           </span>
         ) : (
           <span className="inline-flex items-center gap-1 text-xs text-amber-400/90 font-medium mt-1">
-            Featured Laptop Stand Recommendation
+            Featured Recommendation
           </span>
         )}
       </div>

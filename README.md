@@ -38,12 +38,12 @@ cp .env.example .env.local
 ### Supported Variables:
 | Variable | Description | Example |
 | :--- | :--- | :--- |
-| `NEXT_PUBLIC_SITE_URL` | Base domain URL (no trailing slash) | `https://codovatefinds.com` |
+| `NEXT_PUBLIC_SITE_URL` | Base domain URL (no trailing slash) | `https://codovatefinds.codovatesolutions.in` |
 | `NEXT_PUBLIC_SITE_NAME` | Website name | `Codovate Finds` |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | Public contact email | `contact@codovatefinds.com` |
-| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | `G-XXXXXXXXXX` |
-| `NEXT_PUBLIC_PINTEREST_VERIFICATION` | Pinterest domain claim meta tag code | `abcdef1234567890` |
-| `ADMIN_PASSWORD` | Password for protected `/admin` portal | `codovate2026` |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Public contact email | `codovatesolutions@gmail.com` |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | `G-HXVDZD6T6D` |
+| `NEXT_PUBLIC_PINTEREST_VERIFICATION` | Pinterest domain claim meta tag code | `54c480283a5c152afb85422bbf117785` |
+| `ADMIN_PASSWORD` | Password for protected `/admin` portal | `CHANGE_ME_IN_VERCEL` |
 | `NEXT_PUBLIC_SUPABASE_URL` | Optional Supabase URL | `https://xyz.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Optional Supabase Anon key | `eyJhb...` |
 
@@ -61,16 +61,16 @@ npm run start
 1. Push your repository to **GitHub**.
 2. Log into **Vercel** and click **"Add New Project"**.
 3. Import `codovate-finds`.
-4. Configure **Environment Variables** in Vercel settings (e.g., `NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`).
+4. Configure **Environment Variables** in Vercel settings (`NEXT_PUBLIC_SITE_URL`, `ADMIN_PASSWORD`, etc.).
 5. Click **Deploy**.
 
 ---
 
 ## 🌐 7. Custom Domain Configuration
 1. In your Vercel Dashboard, navigate to **Settings &rarr; Domains**.
-2. Add your domain (e.g. `codovatefinds.com` or `finds.codovate.com`).
-3. Add the required DNS records (A record pointing to `76.76.21.21` or CNAME pointing to `cname.vercel-dns.com`) at your domain registrar (GoDaddy, Namecheap, Cloudflare).
-4. Update `NEXT_PUBLIC_SITE_URL` in Vercel to match your final domain.
+2. Add your domain (`https://codovatefinds.codovatesolutions.in`).
+3. Add the required CNAME / A DNS records at your domain registrar.
+4. Update `NEXT_PUBLIC_SITE_URL` in Vercel to `https://codovatefinds.codovatesolutions.in`.
 
 ---
 
@@ -85,7 +85,7 @@ npm run start
 
 ## 📊 9. Google Analytics Setup
 1. Create a Web Data Stream in **Google Analytics 4**.
-2. Copy your **Measurement ID** (format: `G-XXXXXXXXXX`).
+2. Copy your **Measurement ID** (`G-HXVDZD6T6D`).
 3. Set `NEXT_PUBLIC_GA_ID` in your environment variables.
 4. Outbound affiliate clicks (`affiliate_click`), guide views (`article_view`), and site search terms (`search`) will automatically stream to GA4.
 
@@ -93,8 +93,9 @@ npm run start
 
 ## 🔍 10. Google Search Console Setup
 1. Open [Google Search Console](https://search.google.com/search-console).
-2. Add property as a **URL Prefix** or **Domain**.
-3. Submit your XML Sitemap URL: `https://yourdomain.com/sitemap.xml`.
+2. Add property using **URL Prefix**: `https://codovatefinds.codovatesolutions.in`.
+3. Verify ownership.
+4. Submit XML Sitemap: `https://codovatefinds.codovatesolutions.in/sitemap.xml`.
 
 ---
 

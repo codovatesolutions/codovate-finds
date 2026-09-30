@@ -163,6 +163,22 @@ export default function AdminPage() {
         </button>
       </div>
 
+      {/* Database Persistence Status Banner */}
+      <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-900/60 flex items-center justify-between gap-4 text-xs text-amber-300">
+        <div className="flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0 text-amber-400" />
+          <span>
+            <strong>Database Status:</strong> Persistent database integration not configured — In-Memory Demo Mode. Edits reflect in current active session.
+          </span>
+        </div>
+        <button
+          onClick={() => setActiveTab("database")}
+          className="px-3 py-1 rounded-xl bg-amber-900/60 border border-amber-700 hover:bg-amber-800 text-white font-semibold shrink-0"
+        >
+          Setup Supabase &rarr;
+        </button>
+      </div>
+
       {/* Tabs */}
       <div className="flex items-center gap-3 border-b border-slate-800 pb-2 text-xs">
         <button
