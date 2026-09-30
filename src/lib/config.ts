@@ -1,0 +1,18 @@
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+
+export const SITE_NAME =
+  process.env.NEXT_PUBLIC_SITE_NAME || "Codovate Finds";
+
+export const CONTACT_EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@codovatefinds.com";
+
+export const PINTEREST_VERIFICATION =
+  process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION || "";
+
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+
+export function getFullUrl(path: string): string {
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE_URL}${cleanPath}`;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#2f5bea"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<circle cx="980" cy="100" r="260" fill="#ffffff" opacity=".06"/>
+<text x="90" y="250" fill="#fff" font-family="Arial" font-size="92" font-weight="700">Codovate Finds</text>
+<text x="90" y="330" fill="#dbe4ff" font-family="Arial" font-size="36">Smarter desk, student & tech buying guides</text>
+<text x="90" y="430" fill="#f59e0b" font-family="Arial" font-size="30" font-weight="700">India • Practical • Budget-aware</text>
+</svg>
