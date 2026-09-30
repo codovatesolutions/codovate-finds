@@ -140,7 +140,7 @@ export default function PinStudioPage() {
 
     ctx.font = "500 24px Inter, sans-serif";
     ctx.fillStyle = "#94a3b8";
-    ctx.fillText("codovatefinds.com • Smart Buying Guides", 185, 162);
+    ctx.fillText("codovatefinds.codovatesolutions.in • Smart Buying Guides", 185, 162);
 
     // 4. Category / Tag Pill
     ctx.fillStyle = "rgba(37, 99, 235, 0.25)";
@@ -192,7 +192,7 @@ export default function PinStudioPage() {
     // 10. Footer Website Branding
     ctx.fillStyle = "#94a3b8";
     ctx.font = "600 24px Inter, sans-serif";
-    ctx.fillText("codovatefinds.com", 500, 1420);
+    ctx.fillText("codovatefinds.codovatesolutions.in", 500, 1420);
   }, [headline, subtitle, ctaText, templateStyle, bgImage]);
 
   useEffect(() => {
